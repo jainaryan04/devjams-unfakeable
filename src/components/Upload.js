@@ -69,11 +69,11 @@ function UploadPage() {
     };
 
     return (
-        <div className="text-white about w-[100vw] h-auto flex flex-col items-center justify-center">
+        <div className="text-white about w-full h-auto flex flex-col items-center justify-center overflow-hidden">
             
             <div className="w-[95vw] h-auto border-black my-12 border-4 shadow-[-10px_10px_0_0_#000000] flex flex-col items-center">
             <div className="bg-white h-[2vh] lg:h-[8vh] w-full flex items-center border-black border-b-2 pl-[0.5vw]">
-                <img src="/signal.svg" alt="Yellow Circles" className="h-[1vh] lg:h-[5vh]" />
+                <img src="/signal.svg" alt="Traffic Signal" className="h-[1vh] lg:h-[5vh]" />
             </div>
             <div className="flex flex-col text-white w-full">
                 <h1 className="text-[6vh] font-bold my-6 font-vt323 flex pl-24">
@@ -133,12 +133,12 @@ function UploadPage() {
                     Upload and Process
                 </button>
 
-                {isLoading && (
+                {/* {isLoading && (
                     <div className="mt-6">
                         <img src="/loader.gif" alt="Loading..." className="w-[100px] h-[100px]" />
                         <p className="text-white mt-2">Processing, please wait...</p>
                     </div>
-                )}
+                )} */}
             </div>
             </div>
         </div>
