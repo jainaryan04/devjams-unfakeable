@@ -71,48 +71,53 @@ function UploadPage() {
     return (
         <div className="text-white about w-full h-auto flex flex-col items-center justify-center overflow-hidden">
             
-            <div className="w-[95vw] h-auto border-black my-12 border-4 shadow-[-10px_10px_0_0_#000000] flex flex-col items-center">
+            <div className="w-[90vw] lg:w-[95vw] h-auto border-black my-12 border-4 shadow-[-5px_5px_0_0_#000000] lg:shadow-[-10px_10px_0_0_#000000] flex flex-col items-center">
             <div className="bg-white h-[2vh] lg:h-[8vh] w-full flex items-center border-black border-b-2 pl-[0.5vw]">
                 <img src="/signal.svg" alt="Traffic Signal" className="h-[1vh] lg:h-[5vh]" />
             </div>
             <div className="flex flex-col text-white w-full">
-                <h1 className="text-[6vh] font-bold my-6 font-vt323 flex pl-24">
-                    Welcome to TrueSight – Your Reliable Deepfake Detection Tool
-                </h1>
-                <div className="flex justify-center border-b-8 border-white py-8">
-                    <p className="text-[4vh] mb-6 font-vt323 inline w-[50vw] pr-4">
-                        In an era where media manipulation is becoming increasingly sophisticated, detecting the
-                        authenticity of video and audio content is more important than ever. At TrueSight, we
-                        leverage cutting-edge AI technology to help you identify whether a file is genuine or
-                        manipulated, specifically targeting deepfake content.
-                    </p>
-                    <img src="/upload.jpeg" className="w-[30vw] h-[40vh] inline" />
-                </div>
-                <h2 className="text-[6vh] font-semibold my-8 font-vt323 flex items-center pl-24">
-                    How It Works:
-                </h2>
-                <ul className="custom-square-list">
-                    <li>
-                        <div className="text-[4vh] mb-4 text-left font-vt323 pr-24">
-                            <strong>Upload Your Media:</strong> You can upload either a video (in .mp4 format) or an
-                            audio file (in .wav format).
-                        </div>
-                    </li>
-                    <li>
-                        <div className="text-[4vh] mb-4 text-left font-vt323 pr-24">
-                            <strong>Real-Time Analysis:</strong> Once your file is uploaded, our system will analyze it
-                            using advanced deep learning models trained to detect inconsistencies typical of deepfakes.
-                        </div>
-                    </li>
-                    <li>
-                        <div className="text-[4vh] mb-8 text-left font-vt323 pr-24">
-                            <strong>Instant Results:</strong> After processing, you will receive a clear report
-                            indicating whether the content is real or a deepfake, along with detailed reasons behind the
-                            classification.
-                        </div>
-                    </li>
-                </ul>
+    <div className="text-center w-full">
+        <p className="text-[3vh] lg:text-[6vh] font-bold my-6 font-vt323">
+            Welcome to UnFakeable – Your Reliable Deepfake Detection Tool
+        </p>
+    </div>
+    <div className="lg:flex justify-center border-b-8 border-white py-8 w-full">
+    <p className="text-[2.5vh] lg:text-[4vh] mb-6 font-vt323 w-full lg:w-[50vw] px-4 text-center lg:text-left">
+        In an era where media manipulation is becoming increasingly sophisticated, detecting the
+        authenticity of video and audio content is more important than ever. At UnFakeable, we
+        leverage cutting-edge AI technology to help you identify whether a file is genuine or
+        manipulated, specifically targeting deepfake content.
+    </p>
+    <img src="/upload.jpeg" className="w-[70vw] lg:w-[30vw] h-[25vh] lg:h-[40vh] mx-auto lg:mx-0 lg:inline" />
+</div>
+
+    <h2 className="text-[3vh] lg:text-[6vh] font-semibold my-8 font-vt323 text-center">
+        How It Works:
+    </h2>
+    <ul className="custom-square-list">
+        <li>
+            <div className="text-[4vh] mb-4 text-left font-vt323 pr-24">
+                <strong>Upload Your Media:</strong> You can upload either a video (in .mp4 format) or an
+                audio file (in .wav format).
             </div>
+        </li>
+        <li>
+            <div className="text-[4vh] mb-4 text-left font-vt323 pr-24">
+                <strong>Real-Time Analysis:</strong> Once your file is uploaded, our system will analyze it
+                using advanced deep learning models trained to detect inconsistencies typical of deepfakes.
+            </div>
+        </li>
+        <li>
+            <div className="text-[4vh] mb-8 text-left font-vt323 pr-24">
+                <strong>Instant Results:</strong> After processing, you will receive a clear report
+                indicating whether the content is real or a deepfake, along with detailed reasons behind the
+                classification.
+            </div>
+        </li>
+    </ul>
+</div>
+
+
 
             <div className="pb-12 flex flex-col items-center justify-center text-center">
                 <h1 className="text-white text-[3vh]">Upload Audio (.wav) or Video for Analysis</h1>
