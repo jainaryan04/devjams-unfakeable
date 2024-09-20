@@ -81,7 +81,7 @@ function UploadPage() {
             Welcome to UnFakeable – Your Reliable Deepfake Detection Tool
         </p>
     </div>
-    <div className="lg:flex justify-center border-b-8 border-white py-8 w-full">
+    <div className="lg:flex justify-center border-b-4 lg:border-b-8 border-white py-8 w-full">
     <p className="text-[2.5vh] lg:text-[4vh] mb-6 font-vt323 w-full lg:w-[50vw] px-4 text-center lg:text-left">
         In an era where media manipulation is becoming increasingly sophisticated, detecting the
         authenticity of video and audio content is more important than ever. At UnFakeable, we
@@ -94,21 +94,21 @@ function UploadPage() {
     <h2 className="text-[3vh] lg:text-[6vh] font-semibold my-8 font-vt323 text-center">
         How It Works:
     </h2>
-    <ul className="custom-square-list">
+    <ul className="custom-square-list pl-8 lg:pl-32">
         <li>
-            <div className="text-[4vh] mb-4 text-left font-vt323 pr-24">
+            <div className="text-[2vh] lg:text-[4vh] mb-4 text-left font-vt323">
                 <strong>Upload Your Media:</strong> You can upload either a video (in .mp4 format) or an
                 audio file (in .wav format).
             </div>
         </li>
         <li>
-            <div className="text-[4vh] mb-4 text-left font-vt323 pr-24">
+        <div className="text-[2vh] lg:text-[4vh] mb-4 text-left font-vt323">
                 <strong>Real-Time Analysis:</strong> Once your file is uploaded, our system will analyze it
                 using advanced deep learning models trained to detect inconsistencies typical of deepfakes.
             </div>
         </li>
         <li>
-            <div className="text-[4vh] mb-8 text-left font-vt323 pr-24">
+        <div className="text-[2vh] lg:text-[4vh] mb-4 text-left font-vt323">
                 <strong>Instant Results:</strong> After processing, you will receive a clear report
                 indicating whether the content is real or a deepfake, along with detailed reasons behind the
                 classification.
@@ -119,22 +119,22 @@ function UploadPage() {
 
 
 
-            <div className="pb-12 flex flex-col items-center justify-center text-center">
-                <h1 className="text-white text-[3vh]">Upload Audio (.wav) or Video for Analysis</h1>
+            <div className="pb-12 flex flex-col items-center justify-center text-center font-vt323">
+                <h1 className="text-white text-[2.5vh] lg:text-[3vh] underline">Upload Audio (.wav) or Video for Analysis</h1>
 
                 {/* Video Upload */}
-                <div className="my-6 text-white text-[3vh]">
+                <div className="my-4 lg:my-6 text-white text-[2vh] lg:text-[3vh]">
                     <label>Upload Video:</label>
                     <input type="file" onChange={handleVideoFileChange} accept="video/*" className="" />
                 </div>
 
                 {/* Audio Upload */}
-                <div className="mb-6 text-white text-[3vh]">
+                <div className="my-4 lg:my-6 text-white text-[2vh] lg:text-[3vh]">
                     <label>Upload Audio (.wav):</label>
                     <input type="file" onChange={handleAudioFileChange} accept="audio/wav" />
                 </div>
 
-                <button onClick={handleUpload} className="p-4 bg-red-500 hover:bg-yellow-500 border-[#525252] hover:border-black border-4 shadow-[-10px_10px_0_0_#525252] hover:shadow-[-10px_10px_0_0_#000000]">
+                <button onClick={handleUpload} className="p-2 lg:p-4 bg-red-500 hover:bg-yellow-500 border-[#525252] hover:border-black border-4 shadow-[-10px_10px_0_0_#525252] hover:shadow-[-10px_10px_0_0_#000000]">
                     Upload and Process
                 </button>
 
