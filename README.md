@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Unfaked: Advanced Deepfake Detection with Explanatory Insights
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The application runs in a development environment on port 3000 by default using the command `npm run dev`.
 
-## Available Scripts
+## Prerequisites
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (version X.X.X or above)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+  
+You can verify that both are installed by running:
+bash
+node -v
+npm -v
 
-In the project directory, you can run:
+## Introduction
+Unfaked is an advanced deepfake detection framework designed to not only identify manipulated media but also explain why a video is classified as a deepfake. Leveraging state-of-the-art AI models, Unfaked goes beyond simple detection, offering detailed insights into the underlying reasons for the classification. This project integrates various deep learning techniques to provide a comprehensive and transparent analysis of video authenticity. 
+  
+Unfaked is particularly useful for researchers, developers, and organizations looking for reliable, explainable AI in the fight against media manipulation. By utilizing cutting-edge detection models and incorporating advanced visual and audio analysis, Unfaked stands out as a unique tool in the growing field of deepfake detection.
 
-### `npm start`
+## AI Models Utilized in Unfaked
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Unfaked employs a diverse set of AI models and techniques to ensure robust and reliable deepfake detection. Each model plays a critical role in analyzing different aspects of the video to provide a comprehensive evaluation:  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Forensic Analysis:** This model inspects inconsistencies in the visual data by detecting artifacts, compression issues, and irregularities in pixel distribution. It helps identify manipulated content by examining digital fingerprints left by deepfake generation methods.
+  
+- **LipNet:** LipNet is employed to perform lip reading, analyzing the synchronization between spoken words and lip movements. By comparing audio and visual cues, it identifies mismatches that may occur in deepfake videos where voice and lip movements are not aligned.
+  
+<div align="center">
+  <img src="./images/Lipnet.png" alt="Alt text" width="800" height="365">
+  <p align="center">
+    <i>Figure 1: Custom-built Lipnet Architecture.</i>
+  </p>
+</div>
 
-### `npm test`
+- **MesoNet:** MesoNet is specifically designed for deepfake detection, focusing on mesoscopic properties of images. It analyzes subtle visual patterns that are typically invisible to the human eye but indicate tampered media.
+    
+<div align="center">
+  <img src="./images/Mesonet.png" alt="Alt text" width="650" height="375">
+  <p align="center">
+    <i>Figure 2: Custom-built Mesonet Architecture.</i>
+  </p>
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Gaze Tracker:** This model monitors the subject's eye movements, tracking irregularities in blinking patterns and gaze direction. Since deepfake models often struggle with replicating natural eye movements, the gaze tracker is an effective tool in detecting anomalies.
+    
+<div align="center">
+  <img src="./images/Gaze tracker.png" alt="Alt text" width="600" height="350">
+  <p align="center">
+    <i>Figure 3:  Gaze-tracker Architecture.</i>
+  </p>
+</div>
 
-### `npm run build`
+- **MFCC (Mel-frequency cepstral coefficients):** For audio analysis, Unfaked uses MFCC to detect deepfake audio by analyzing speech patterns, pitch, and frequency components. It identifies manipulated or synthetic audio elements that don't align with natural voice characteristics.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<div align="center">
+  <img src="./images/MFCC1.1.png" alt="Image 1" width="400" height="250" style="margin-right: 10px;">
+  <img src="./images/MFCC1.2.png" alt="Image 2" width="400" height="250" style="margin-right: 10px;">
+  <img src="./images/MFCC1.3.png" alt="Image 3" width="400" height="250">
+</div>
+<p align="center">
+  <i>Figure 4: (Top Left to Right) Audio Sprectrogram, Audio Mel Spectrogram,(Bottom) Audio Mel-Frequency Cepstral Coefficients.</i>
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
