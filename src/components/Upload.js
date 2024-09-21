@@ -130,9 +130,7 @@ function UploadPage() {
                 </button>
 
                 {isLoading && (
-                    <div className="mt-6">
-                        <p className="text-white mt-2">Processing, please wait...</p>
-                    </div>
+                    <div class="loader mt-8"></div>
                 )}
             </div>
             </div>

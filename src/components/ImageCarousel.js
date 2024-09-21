@@ -36,7 +36,7 @@ const ImageCarousel = () => {
     <div>
       {loading && (
         <div className="flex items-center justify-center h-[50vh] lg:h-[85vh]">
-          <div className="loader">Loading...</div>
+          <div class="loader"></div>
         </div>
       )}
       <div style={{ display: loading ? 'none' : 'block' }}>
