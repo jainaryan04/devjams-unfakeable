@@ -138,12 +138,11 @@ function UploadPage() {
                     Upload and Process
                 </button>
 
-                {/* {isLoading && (
+                {isLoading && (
                     <div className="mt-6">
-                        <img src="/loader.gif" alt="Loading..." className="w-[100px] h-[100px]" />
                         <p className="text-white mt-2">Processing, please wait...</p>
                     </div>
-                )} */}
+                )}
             </div>
             </div>
         </div>
