@@ -11,7 +11,11 @@ export default function Navbar({ loginAction, text }) {
   return (
     <nav className="absolute flex items-center justify-between bg-white border-b-2 border-black h-[8vh] lg:h-[10vh] px-2 lg:px-10 w-full font-pixeboy z-[1000] font-vt323">
       {/* Logo */}
-
+      <div className="">
+      <Link to="/">
+        <img src="/logo.gif" className="h-[3vh] lg:h-[7vh]"/>
+        </Link>
+      </div>
       {/* Desktop Menu */}
       <ul className="hidden lg:flex items-center gap-12 text-black font-bold text-3xl tracking-wider">
         <Link to="/">
@@ -23,7 +27,9 @@ export default function Navbar({ loginAction, text }) {
         <Link to="/upload">
           <li className="hover:underline">Upload</li>
         </Link>
+        
       </ul>
+      
       {/* Mobile Menu Button */}
       <button className="lg:hidden block" onClick={toggleMenu}>
         <img
