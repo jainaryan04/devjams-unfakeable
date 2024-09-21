@@ -69,7 +69,7 @@ function UploadPage() {
     };
 
     return (
-        <div className="text-white about w-full h-auto flex flex-col items-center justify-center overflow-hidden">
+        <div className="text-white pt-[10vh] about w-full h-auto flex flex-col items-center justify-center overflow-hidden">
             
             <div className="w-[90vw] lg:w-[95vw] h-auto border-black my-12 border-4 shadow-[-5px_5px_0_0_#000000] lg:shadow-[-10px_10px_0_0_#000000] flex flex-col items-center">
             <div className="bg-white h-[2vh] lg:h-[8vh] w-full flex items-center border-black border-b-2 pl-[0.5vw]">
