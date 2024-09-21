@@ -41,24 +41,14 @@ function UploadPage() {
                 },
             });
 
-            const { result, random_array, metadata, prediction, frame_base64, dct_base64, image_base64, total_blinks, irregular_blinks, full_prediction_string, transcribed_text, similarity, micro, freq, gaze, lip, mfcc1_64, mfcc2_64, mfcc3_64, final_result } = response.data;
+            const { micro, random_array} = response.data;
 
             // Navigate to ResultPage with the result, randomArray, metadata, and encoded images
             navigate('/result', {
                 state: {
-                    result,
-                    randomArray: random_array || [],
-                    metadata,
-                    prediction,
-                    frame_base64,  // Add frame_base64 image
-                    dct_base64,    // Add dct_base64 image
-                    image_base64,
-                    total_blinks,
-                    irregular_blinks,
-                    full_prediction_string,
-                    transcribed_text,
-                    similarity,
-                    micro, freq, gaze, lip, mfcc1_64, mfcc2_64, mfcc3_64, final_result // Add transcribed_text
+                    micro,
+                    randomArray: random_array || []
+                   
                 }
             });
         } catch (error) {
