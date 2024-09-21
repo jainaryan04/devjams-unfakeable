@@ -41,11 +41,12 @@ function UploadPage() {
                 },
             });
 
-            const { micro, random_array} = response.data;
+            const {result, micro, random_array} = response.data;
 
             // Navigate to ResultPage with the result, randomArray, metadata, and encoded images
             navigate('/result', {
                 state: {
+                    result,
                     micro,
                     randomArray: random_array || []
                    

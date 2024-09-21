@@ -34,20 +34,22 @@ function ResultPage() {
 
     // Extract result, randomArray, metadata, frame_base64, dct_base64, image_base64, total_blinks, irregular_blinks, full_prediction_string, and transcribed_text from location state
     const {
-        freq,
+        result,
+        micro,
         randomArray
        
     } = location.state || { 
-        freq: null, 
+        result:null,
+        micro: null, 
         randomArray: [],
         
     };
 
     // Debugging - log the result, randomArray, metadata, and images to see what is being passed
     useEffect(() => {
-        console.log("Result:", freq);
+        console.log("Result:", micro);
         console.log("Random Array:", randomArray);
-    }, [freq, randomArray]);
+    }, [result,micro, randomArray]);
 
     useEffect(() => {
       AOS.init({
@@ -116,7 +118,7 @@ function ResultPage() {
 
   
           {/* Container for side-by-side content */}
-          <div className="flex w-[80vw] justify-between my-8 text-[4vh]" >
+          {/* <div className="flex w-[80vw] justify-between my-8 text-[4vh]" > */}
               {/* DCT Plot */}
               {/* {frame_base64 && (
                   <div className="bg-red-500 w-[48%] p-4 text-center border-black border-4 shadow-[-10px_10px_0_0_#000000]" data-aos="zoom-in">
@@ -141,7 +143,7 @@ function ResultPage() {
                       {gaze !== undefined && gaze !== 0 && <p className='mt-4 border-t-4 border-black bg-yellow-400 py-4 text-gray-500'><span className="underline">Conclusion:</span>{gaze}</p>}
                   </div>
               )} */}
-          </div>
+          {/* </div> */}
   
           {/* {mfcc1_64 && (
               <div className="text-center mt-4 border-black border-4 shadow-[-20px_20px_0_0_#000000]" data-aos="zoom-in">
@@ -164,13 +166,12 @@ function ResultPage() {
           )} */}
   
           {randomArray.length > 0 && (
-              <div className="bg-red-500 w-[80vw] text-[4vh] p-4 text-center border-black border-4 shadow-[-10px_10px_0_0_#000000]" data-aos="zoom-in">
-                <p className="text-[6vh] font-extrabold">MESO NET</p>
+              <div>
                   <h2><span className="underline pr-4 ">Prediction Graph</span></h2>
                   <Line data={data} />
                   {result && <p><span className="underline pr-4">MicroExpression Analysis Graph: </span>{result}</p>}
                   {micro !== undefined && micro !== 0 && <p className='mt-4 border-t-4 border-black bg-yellow-400 py-4 text-gray-500'><span className="underline">Conclusion: </span>{micro}</p>}
-              </div>
+    </div>
           )}
 
           {/* {final_result && (
