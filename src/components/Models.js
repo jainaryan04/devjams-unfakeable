@@ -78,7 +78,7 @@ const About = () => {
             }`}
           >
             <div className="flex-1">
-              <h2 className="text-[2vh] lg:text-[5vh] font-bold px-4">{item.head}</h2>
+              <h2 className="text-[3vh] lg:text-[5vh] font-bold px-4 text-cyan-300">{item.head}</h2>
               <p className="text-[2.5vh] lg:text-[4vh] mt-2 text-yellow-400 font-semibold px-8">{item.info}</p>
             </div>
             
