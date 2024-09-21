@@ -41,15 +41,23 @@ function UploadPage() {
                 },
             });
 
-            const {result, micro, random_array} = response.data;
+            const { result, random_array,  prediction, frame_base64, dct_base64, image_base64, total_blinks, irregular_blinks, full_prediction_string, transcribed_text, similarity, micro,  gaze, lip, mfcc1_64, mfcc2_64, mfcc3_64, final_result,result1 } = response.data;
 
             // Navigate to ResultPage with the result, randomArray, metadata, and encoded images
             navigate('/result', {
                 state: {
                     result,
-                    micro,
-                    randomArray: random_array || []
-                   
+                    randomArray: random_array || [],
+                    prediction,
+                    frame_base64,  // Add frame_base64 image
+                    dct_base64,    // Add dct_base64 image
+                    image_base64,
+                    total_blinks,
+                    irregular_blinks,
+                    full_prediction_string,
+                    transcribed_text,
+                    similarity,
+                    micro,  gaze, lip, mfcc1_64, mfcc2_64, mfcc3_64, final_result ,result1// Add transcribed_text
                 }
             });
         } catch (error) {
@@ -130,9 +138,7 @@ function UploadPage() {
                 </button>
 
                 {isLoading && (
-                    <div className="mt-6">
-                        <p className="text-white mt-2">Processing, please wait...</p>
-                    </div>
+                    <div class="loader mt-8"></div>
                 )}
             </div>
             </div>
