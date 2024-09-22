@@ -35,38 +35,56 @@ function UploadPage() {
 
         try {
             setIsLoading(true); // Start loading
+
+            // Step 1: Upload the video and audio to the backend
             const response = await axios.post('http://127.0.0.1:8000/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
             });
 
-            const { result, random_array,  prediction, frame_base64, dct_base64, image_base64, total_blinks, irregular_blinks, full_prediction_string, transcribed_text, similarity, micro,  gaze, lip, mfcc1_64, mfcc2_64, mfcc3_64, final_result,result1 } = response.data;
+            // Step 2: Extract response data from the backend
+            const { result, random_array, prediction, frame_base64, dct_base64, image_base64, total_blinks, irregular_blinks, full_prediction_string, transcribed_text, similarity, micro, gaze, lip, mfcc1_64, mfcc2_64, mfcc3_64, final_result, result1 } = response.data;
 
-            // Navigate to ResultPage with the result, randomArray, metadata, and encoded images
-            navigate('/result', {
-                state: {
-                    result,
-                    randomArray: random_array || [],
-                    prediction,
-                    frame_base64,  // Add frame_base64 image
-                    dct_base64,    // Add dct_base64 image
-                    image_base64,
-                    total_blinks,
-                    irregular_blinks,
-                    full_prediction_string,
-                    transcribed_text,
-                    similarity,
-                    micro,  gaze, lip, mfcc1_64, mfcc2_64, mfcc3_64, final_result ,result1// Add transcribed_text
-                }
+            // Step 3: Create an object with all the necessary data
+            const dataToSend = {
+                result,
+                randomArray: random_array || [],
+                prediction,
+                frame_base64,  // frame_base64 image
+                dct_base64,    // dct_base64 image
+                image_base64,
+                total_blinks,
+                irregular_blinks,
+                full_prediction_string,
+                transcribed_text,
+                similarity,
+                micro,
+                gaze,
+                lip,
+                mfcc1_64,
+                mfcc2_64,
+                mfcc3_64,
+                final_result,
+                result1
+            };
+
+            // Step 4: Post the final object to localhost:5000/upload
+            await axios.post('http://localhost:5000/upload', dataToSend, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
             });
+
+            // Step 5: Navigate to the result page
+            navigate('/result', { state: dataToSend });
+
         } catch (error) {
-            console.error('Error uploading the files:', error);
+            console.error('Error uploading the files or posting the result:', error);
         } finally {
             setIsLoading(false); // Stop loading
         }
     };
-
     return (
         <div className="text-white pt-[10vh] about w-full h-auto flex flex-col items-center justify-center overflow-hidden">
             
