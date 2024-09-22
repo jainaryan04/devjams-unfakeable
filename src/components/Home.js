@@ -1,20 +1,16 @@
 import React, { useEffect } from "react";
 import "../index.css";
 import ImageCarousel from "./ImageCarousel";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Home() {
   useEffect(() => {
-    // Dynamically load the Tenor embed script
-    const script = document.createElement("script");
-    script.src = "https://tenor.com/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    // return () => {
-    //   // Cleanup script if needed
-    //   document.body.removeChild(script);
-    // };
+    AOS.init({
+      duration: 2000, 
+    });
   }, []);
+
 
   return (
     <div className="h-full w-full about pt-[10vh] font-vt323 text-yellow-400 flex flex-col items-center justify-center overflow-hidden text-[2.5vh] lg:text-[4vh]">
@@ -26,7 +22,7 @@ export default function Home() {
         <div className="bg-white h-[2vh] lg:h-[8vh] w-full flex items-center border-black border-b-2 pl-[0.5vw]">
           <img src="/signal.svg" alt="Traffic Signal" className="h-[1vh] lg:h-[5vh]" />
         </div>
-        <div className="pb-6">
+        <div className="pb-6" data-aos="fade-up">
           <p className="font-extrabold text-[3vh] lg:text-[5vh] p-4 text-cyan-300">
             What is a deepfake?
           </p>
@@ -35,19 +31,15 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-center gap-4 mt-4 w-[60vw] lg:w-[90vw] py-8">
+        <div className="flex flex-col lg:flex-row justify-center gap-4 mt-4 w-[60vw] lg:w-[90vw] py-8" data-aos="zoom-in">
 
- <img src="/gif-1.gif" className="inline lg:h-[60vh] lg:w-[35vw]" />
- <img src="/gif-2.gif" className="inline lg:h-[60vh] lg:w-[35vw]" />
- <img src="/gif-3.gif" className="inline lg:h-[60vh] lg:w-[35vw]" />
+ <img src="/gif-1.gif" className="inline lg:h-[50vh] lg:w-[25vw]" />
+ <img src="/gif-2.gif" className="inline lg:h-[50vh] lg:w-[25vw]" />
+ <img src="/gif-3.gif" className="inline lg:h-[50vh] lg:w-[25vw]" />
 
-  
- 
 </div>
 
-
-
-        <div>
+        <div data-aos="fade-up">
           <p className="font-extrabold text-[3vh] lg:text-[5vh] p-4 text-cyan-300">
             Harmful effects of Deepfake
           </p>
