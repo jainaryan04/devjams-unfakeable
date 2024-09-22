@@ -95,7 +95,7 @@ function ResultPage() {
   
     // Prepare data for the chart
     const data = {
-        labels: randomArray.map((_, index) => Point ${index + 1}),  // Labels for each point on the x-axis
+        labels: randomArray.map((_, index) => `${index + 1}`),
         datasets: [
             {
                 label: 'Predictions',
@@ -162,7 +162,7 @@ function ResultPage() {
                       {total_blinks !== undefined && <p><span className="underline pr-4">Total Blinks: </span>{total_blinks}</p>}
                       {irregular_blinks !== undefined && <p><span className="underline pr-4">Irregular Blinks: </span>{irregular_blinks}</p>}
                       <h2><span className="underline pr-4">Eye Tracker Plot</span></h2>
-                      <img src={data:image/png;base64,${image_base64}} alt="Eye Tracker Plot" className="w-[75%] lg:w-[50%] h-[20vh] lg:h-[60vh] ml-[10vw] lg:ml-[19vw]" />
+                      <img src={`data:image/png;base64,${image_base64}`} alt="Eye Tracker Plot" className="w-[75%] lg:w-[50%] h-[20vh] lg:h-[60vh] ml-[10vw] lg:ml-[19vw]" />
   
                       {gaze !== undefined && gaze !== 0 && <p className='mt-4 border-t-4 border-black bg-yellow-400 py-4 text-gray-500'><span className="underline">Conclusion:</span>{gaze}</p>}
                   </div>
@@ -172,19 +172,19 @@ function ResultPage() {
        {mfcc1_64 && (
               <div className="text-center lg:mt-4 border-black border-4 shadow-[-5px_5px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000]" data-aos="zoom-in">
                 
-                  <img src={data:image/png;base64,${mfcc1_64}} alt="MFCC Plot 1" className="w-[80vw] h-[25vh] lg:h-[50vh]" />
+                  <img src={`data:image/png;base64,${mfcc1_64}`} alt="MFCC Plot 1" className="w-[80vw] h-[25vh] lg:h-[50vh]" />
               </div>
           )}
           {mfcc2_64 && (
               <div className="text-center mt-12 border-black border-4 shadow-[-5px_5px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000]" data-aos="zoom-in">
             
-                  <img src={data:image/png;base64,${mfcc2_64}} alt="MFCC Plot 2" className="w-[80vw] h-[25vh] lg:h-[50vh]" />
+                  <img src={`data:image/png;base64,${mfcc2_64}`} alt="MFCC Plot 2" className="w-[80vw] h-[25vh] lg:h-[50vh]" />
               </div>
           )}
           {mfcc3_64 && (
               <div className="text-center mt-12 border-black border-4 shadow-[-5px_5px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000]" data-aos="zoom-in">
                  
-                  <img src={data:image/png;base64,${mfcc3_64}} alt="MFCC Plot 3" className="w-[80vw] h-[25vh] lg:h-[50vh]" />
+                  <img src={`data:image/png;base64,${mfcc3_64}`} alt="MFCC Plot 3" className="w-[80vw] h-[25vh] lg:h-[50vh]" />
                   
               </div>
           )} 
